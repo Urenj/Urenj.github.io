@@ -1,0 +1,910 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import Google Icon Font and other icons-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Borel&family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+        
+        ::selection{
+          background-color: #c89703;
+          color: white;
+        }
+        header{
+          margin: 0 0 0 0;
+          padding: 30px 0 25px 0;
+          background-color: #212121;
+        }
+
+        nav {
+            position: fixed;
+            z-index: 4;
+        }
+
+        nav .brand-logo {
+            font-family: 'Borel';
+            padding: 12px 50px;
+        }
+        nav .right.hide-on-med-and-down{
+            font-family: 'Titillium Web';
+            padding-right: 30px;
+        }
+        .parallax-container {
+            width: 100%;
+            height: 600px;
+        }
+        .parallax{
+          perspective: 50px;
+        }
+        .parallax::after {
+            content:"";
+            width:100%;
+            height: 100%;
+            margin-top: 60px;
+            position: absolute;
+            background: url("/images/pinal\ prllx_20230930223024.png") center;
+            background-size: cover;
+            /* perspective: 1px; */
+        }
+        .welcome.center{
+          margin: 20px 0 0 0;
+          margin-bottom: 0;
+        }
+        .wiii.center{
+          margin: 0 0 px 0;
+        }
+
+        .sidenav{
+            font-family: 'Titillium Web';
+            margin-top: 0;
+            color: #fff;
+            width: 250px;
+            padding-left: 20px;
+            height: 100vh;
+            background-image: linear-gradient(30deg ,#212121, #ffc107);
+            border-top-right-radius: 80px;
+        }
+
+        aside a {
+        font-size: 12pt;
+        color: #fff;
+        display: block;
+        padding: 12px;
+        padding-left: 30px;
+        text-decoration: none;
+        -webkit-tap-highlight-color:transparent;
+      }
+
+        .sidenav a:hover {
+        color: black;
+        background: #fff;
+        outline: none;
+        position: relative;
+        background-color: #fff;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+      }
+
+        .sidenav a i {
+        margin-right: 5px;
+      }
+
+        .sidenav a:hover::after {
+        content: "";
+        position: absolute;
+        background-color: transparent;
+        bottom: 100%;
+        right: 0;
+        height: 35px;
+        width: 35px;
+        border-bottom-right-radius: 18px;
+        box-shadow: 0 20px 0 0 #fff;
+      }
+
+      aside{
+        margin-left: 20px;
+        font-size: 17pt;
+      }
+        .sidenav a:hover::before {
+        content: "";
+        position: absolute;
+        background-color: transparent;
+        top: 38px;
+        right: 0;
+        height: 35px;
+        width: 35px;
+        border-top-right-radius: 18px;
+        box-shadow: 0 -20px 0 0 #fff;
+      }
+
+        .sidenav p {
+        margin: 0;
+        padding: 40px 0;
+      }
+
+      .user-view{
+        padding: 0 0;
+        margin-right: 0;
+      }
+        .sidenav {
+        font-family: 'Titillium Web';
+        /* width: 100%; */
+        height: 100vh;
+        margin: 0;
+      }
+
+      .social {
+        height: 0;  
+      }
+
+      .social i:before {
+        width: 14px;
+        height: 14px;
+        font-size: 14px;
+        position: fixed;
+        color: #fff;
+        background: #0077B5;
+        padding: 10px;
+        border-radius: 50%;
+        top:5px;
+        right:5px;
+      }
+
+
+        .wan.row {
+            font-family: 'Titillium Web';
+            font-size: 15pt;
+            padding: 20px 20px;
+            line-height: 25px;
+        }
+        .wan.row {
+            margin: 40px auto;
+        }
+        .intro {
+          font-family: 'titillium Web';
+          /* border: 2px solid black; */
+          padding: 30px;
+          padding-right: 50px;
+          padding-left: 50px;
+        }
+        .newu.pic-1.center.col.s12.m6.l6{
+          margin: 0 0;
+          padding: 0 0;
+        }
+        
+        .tu.row {
+            font-family: 'Titillium Web';
+            font-size: 15pt;
+            padding: 20px;
+            /* background: #ddd; */
+            /* border: 0.5px solid #1f1e1e; */
+            line-height: 25px;
+        }
+        .tu.row {
+            margin: 40px auto;
+        }
+        .tri.row.center.col.s12.m12.l12{
+            padding: 20px;
+            font-family: 'Titillium Web';
+        }
+        /* .page-footer.amber.black-text{
+            margin: 0;
+        } */
+        .page-footer.grey.darken-4.amber-text h1{
+            padding-top: 0;
+            font-family: 'Borel';
+        }
+        .page-footer.grey.darken-4.amber-text p {
+            padding-top: 0;
+        }
+        .por.row {
+            font-family: 'Titillium Web';
+            font-size: 15pt;
+            /* padding: 20px; */
+            /* background: #ddd; */
+            /* border: 0.5px solid #1f1e1e; */
+            line-height: 25px;
+        }
+        .justify.col.s12.m12.l12 {
+            padding-left: 270px;
+        }
+        .gwid.col.s12.m12.l12{
+          font-family: 'titillium Web';
+          font-size: 15pt;
+          border: 2px solid black;
+          padding: 30px;
+          padding-right: 50px;
+          padding-left: 50px;
+          border-radius: 50px;
+          box-shadow: 5px 5px #ffc107;/
+        }
+        .walo.row.col.s12.m12.l12{
+          font-family: 'titillium Web';
+        }
+        .card.amber.lighten-1 .card-content{
+          font-size: 13pt;
+        }
+        .tin.row.col.s12.m12.l12 {
+          font-family: 'titillium Web';
+          font-size: 15pt;
+          border: 2px solid black;
+          padding: 30px;
+          padding-right: 30px;
+          padding-left: 30px;
+          border-radius: 50px;
+          box-shadow: 5px 5px #ffc107;
+        }
+        
+        .siyam.center.row.col.s12.m12.l12 , .tin.center.row.col.s12.m12.l12  {
+          font-family: 'Titillium Web';
+        }
+        .siyam.row.col.s12.m12.l12{
+          padding-bottom: 50px;
+        }
+        .ilibin.col.s12.m12.l12.center{
+          font-family: 'Titillium Web';
+        }
+        .carousel-fixed-item.center{
+          font-family: 'Titillium Web';
+        }
+        .page-footer.grey.darken-4.amber-text{
+          padding: 20px;
+          padding-bottom: 100px;
+        }
+        .btn-floating.btn-large.waves-effect.waves-darken.pulse.amber{
+          margin: 10px;
+        }
+        footer .amber-text.center{
+          font-family: 'Titillium Web';
+        }
+        .page-footer.grey.darken-4.amber-text{
+          padding-top: 50px;
+        }
+        .user-view{
+          margin: 0 0;
+          padding: 0 0;
+        }
+
+        .olaw.center.row.col.s12.m12.l12{
+          margin: 100px 20px;
+          font-family: 'titillium Web';
+          font-size: 15pt;
+          border: 2px solid black;
+          padding: 30px;
+          padding-bottom: 30px;
+          padding-right: 50px;
+          padding-left: 50px;
+          border-radius: 50px;
+          box-shadow: 5px 5px #ffc107
+        }
+        .walo.center.row.col.s12.m12.l12{
+          margin: 0 0;
+        }
+
+        .col.s12.m2.l2.amber{
+        background-color: #26a69a;
+        width: 100px;
+        height: 100px;
+        margin: 20px auto;
+        }
+        .newu.pic-1.center.col.s12.m12.l6{
+          padding-top: 150px;
+          margin: 0 0;
+        }
+        .card.amber.hover-reveal{
+          margin: 20px 10px;
+        }
+        /* .center.row.col.s12.m12.l12{
+          color: #ffc107 !important;
+          background-color:  #212121!important;
+          border-radius: 50px;
+          box-shadow: 5px 5px #ffc107
+        } */
+        .walo.center.row.col.s12.m12.l12{
+          color: #ffc107 !important;
+          background-color:  #212121!important;
+          border-radius: 50px;
+          box-shadow: 5px 5px #ffc107
+        }
+        .nit.center.row.col.s12.m12.l12{
+          color: #ffc107 !important;
+          background-color:  #212121!important;
+          border-radius: 50px;
+          box-shadow: 5px 5px #ffc107
+        }
+        
+        .card.amber.hover-reveal{
+          background-color: #212121;
+        }
+
+        .card-reveal{
+        color: #ffffff;
+        background-color: rgba(0,0,0,0.5) !important;
+        }
+        
+        div.card-reveal span.card-title{
+          color: #ffffff !important;
+        }
+        .tabs{
+          background-color: transparent;
+        }
+        td, th{
+          padding: 5px 5px !important;
+        }
+        table.highlight>tbody>tr:hover{
+          background-color: rgba(238,110,115,0.6);
+        }
+        input[type=search]:focus{
+          border-bottom: 1px solid #ee6e73 !important;
+          box-shadow: 0 1px 0 0 #ee6e73 !important;
+        }
+        .container.last{
+          margin-top: 170px;
+        }
+        .siyam.center.row.col.s12.m12.l12{
+          padding-bottom: 0;
+          color: #ffc107 !important;
+          background-color:  #212121!important;
+          border-radius: 50px;
+          box-shadow: 5px 5px #ffc107
+        }
+        .intru.col.s12.m12.l12{
+          margin: 60px 0px;
+          font-family: 'titillium Web';
+          font-size: 15pt;
+          color: #212121 !important;
+          border: 2px solid black;
+          padding: 10px;
+          padding-bottom: 10px;
+          padding-right: 20px;
+          padding-left: 20px;
+          border-radius: 50px;
+          box-shadow: 5px 5px #ffc107
+        }
+        .newu.pic-1.center.col.s12.m12.l6 > p{
+          padding: 0 0 100px 0;
+        }
+        .walo.row.col.s12.m12.l12{
+          margin: 0 0 75px;
+          /* margin-bottom: 75px; */
+        }
+        .artist{
+            padding-left: 0px;
+        }
+        .miyas.row.col.s12.m12.l12{
+          margin: 0 0 75px;;
+        }
+        .nero.center{
+            height: 100px;
+            width: 100px;
+
+            margin: 200px 0 0px 0;
+        }
+        .uno.container{
+          font-family: borel;
+          background-color: #212121;
+          color: #ffc107;
+          padding: 0 0 0 0;
+        }
+        .uno.container > p{
+          font-family: titillium web;
+          font-size: 14pt;
+        }
+        .contact{
+          font-family: titillium web;
+        }
+
+
+
+
+
+        /* HOVERS */
+        .btn.black.amber-text.waves-effect.waves-yellow:hover{
+          color: #212121 !important;
+          background-color: #ffc107 !important;
+        }
+        .btn.amber.black-text:hover{
+          color: #ffc107 !important;
+          background-color: #212121 !important;
+        }
+        .container.hide-on-med-and-up{
+          padding: 20px 0;
+        }
+        .card-content:hover{
+          background:#212121;
+          color: #ffc107 !important;
+        }
+        .card-title.activator > h4:hover{
+          font-size: 40px !important;
+        }
+        .tin.row.col.s12.m12.l12:hover{
+          color:  #212121  !important;
+          background-color: #ffc107 !important;
+          box-shadow: 5px 5px #212121;
+          /* border: 2px solid #ffc107; */
+        }
+        .nit.center.row.col.s12.m12.l12:hover{
+          color: #212121 !important;
+          background-color:  #ffc107!important;
+          box-shadow: 5px 5px #212121;
+        }
+        .olaw.center.row.col.s12.m12.l12:hover{
+          color: #212121 !important;
+          background-color:  #ffc107!important;
+          box-shadow: 5px 5px #212121;
+        }
+        .siyam.center.row.col.s12.m12.l12:hover{
+          color: #212121 !important;
+          background-color:  #ffc107!important;
+          box-shadow: 5px 5px #212121;
+        }
+        .walo.center.row.col.s12.m12.l12:hover{
+          color: #212121 !important;
+          background-color:  #ffc107!important;
+          box-shadow: 5px 5px #212121;
+        }
+        .walo.center.row.col.s12.m12.l12 > h3:hover{
+          font-size: 47px !important;
+        }
+        .siyam.center.row.col.s12.m12.l12 > h3:hover{
+          font-size: 47px !important;
+        }
+        .nit.center.row.col.s12.m12.l12 > h3:hover{
+          font-size: 47px !important;
+        }
+        .gwid.col.s12.m12.l12:hover{
+          color: #212121 !important;
+          background-color:  #ffc107!important;
+          box-shadow: 5px 5px #212121;
+        }
+        .intru.col.s12.m12.l12:hover{
+          color: #212121 !important;
+          background-color: snow!important;
+          box-shadow: 5px 5px #ffc107;
+        }
+        .welcome.center:hover{
+          font-size: 60px;
+        }
+        .artist:hover{
+          font-size: 60px;
+        }
+        .aworks:hover{
+          font-size: 60px;
+        }
+        .intru.col.s12.m12.l12:hover{
+          color: #212121 !important;
+          background-color:  #ffc107!important;
+          box-shadow: 5px 5px #212121;
+        }
+        .comms.section.scrollspy:hover{
+          font-size: 60px;
+        }
+        
+        
+        
+
+        /* RESPONSIVE */
+        @media screen and (max-width: 1640px){
+          /* body{
+            font-size: 20pt;
+          } */
+          .sidenav{
+            font-size: 20pt;
+           
+            margin-bottom: 0;
+            height: 1640px;
+          }
+          .wan.row{
+            font-size: 14pt;
+            line-height: 25px;
+          }
+          .artist{
+            padding-left: 0px;
+          }
+          .intro{
+            padding: 20px 0;
+          }
+          a .btn-small.amber.black-text{
+            height: 50px !important;
+          }
+          .tin.row.col.s12.m6.l6{
+            padding-left: 0;
+            padding-right: 0;
+          }
+          .parallax-container{
+            height: 500px !important;
+          }
+          /* .carousel.carousel-slider{
+            height: 300px !important;
+          } */
+          .newu.pic-1.center.col.s12.m6.l6{
+            height: 100px;
+            width: 100px;
+            margin: 0 0 400px 0px;
+          }
+          footer{
+          padding-bottom: 20px;
+          }
+          .nero{
+            height: 100px;
+            width: 100px;
+            margin: 10px 0 0px 0;
+          }
+        }
+
+
+        
+    </style>
+
+    <title>AniNeru</title>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="nav-wraper amber">
+        <div class="nabi">
+            <a href="#" class="brand-logo black-text ">AniNeru</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                <i class="material-icons black-text">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#" class="ho black-text waves-effect waves-yellow">Home</a></li>
+                <li><a href="#about" class="ab black-text waves-effect waves-yellow">About</a></li>
+                <li><a href="#commission" class="co black-text waves-effect waves-yellow">Commission</a></li>
+                <li><a href="#process" class="te black-text waves-effect waves-yellow">Terms & Process</a></li>
+                <li><a href="#updates" class="te black-text waves-effect waves-yellow">Updates</a></li>
+                <li><a href="mailto:contactanineru@gmail.com" class="btn black amber-text waves-effect waves-yellow">Contact Me!
+                    <i class="material-icons left">email</i>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav user-view" id="mobile-links">
+        
+         <!-- <div class="user-view"> -->
+          <aside>
+            <p> Menu </p>
+            <a href="#">
+              <i class="fa fa-home" aria-hidden="true"></i>
+              Home
+            </a>
+            <a href="#about">
+              <i class="fa fa-user-o" aria-hidden="true"></i>
+              About
+            </a>
+            <a href="#commission">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              Commission
+            </a>
+            <a href="#process">
+              <i class="fa fa-question-circle" aria-hidden="true"></i>
+              Terms & Process
+            </a>
+            <a href="#updates">
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              Updates
+            </a>
+            <p style="padding-top: 0; padding-bottom: 0; margin-left: 50px ;">-----</p>
+            <a href="mailto:contactanineru@gmail.com" color=""><i class="fa fa-envelope" aria-hidden="true"></i>AniNeru Mail Here~</a>
+          </aside>
+     </ul>
+
+     <!-- Parallax -->
+     <div class="parallax-container">
+        <div class="parallax">
+            <img src="./images/Parallax-bg.png" alt="" class="responsive-img">
+        </div>
+    </div>
+
+    <header>
+    <div class="uno container">
+      <div>
+      <h2 class="welcome center">AniNeru</h2>
+      <pre style="font-family: Titillium Web;" align="justify" class="wiii center">a &nbsp; r &nbsp; t &nbsp; i &nbsp; s &nbsp; t &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a &nbsp; n &nbsp; i &nbsp; m &nbsp; a &nbsp; t &nbsp; o &nbsp; r</pre>
+      </div>
+      <!-- <p class="center">This is AniNeru</p> -->
+    </div>
+    <div class="progress amber">
+      <div class="indeterminate grey darken-4"></div>
+    </div>
+    </header>
+
+
+    <div class="container" id="about">
+        <div class="wan row">
+            <div class="center col s12 m12 l6">
+                <div class="intru col s12 m12 l12">
+                  <h2 class="artist section scrollspy center" id="about">Artist Info</h2>
+                  <p align="justify" class="intro">Hello! I'm AniNeru and I'm an self-taught Digital Artist and Animator and also currently a College student. I also draw in various artstyles.<br>&nbsp;<br>My current artist name "AniNeru" formed because of the inspiration to peoples nickname to Kyoto Animation which is 'KyoAni'. Since I draw Anime, I thought that the japanese translation of my nickname "Neru" and "Ani short for 'Anime /Animation' are good together. But compared to the KyoAni nickname, I did it in vice versa which is now "AniNeru". My previous Artist names are NeruSan and Neruuu <br>&nbsp;<br>I started doing digital arts way back June 2020, I was introduced into 'Pinoy Animation' where I first watched "Asheru Animation" in Facebook Watch. I got entertained by his videos and inspire me to create and learn animation by myself. <br>&nbsp;<br> Since I was a kid, I am fascinated and amazed on Cartoons and Anime especially the cartoons and Anime TV Channels they show so when this opportunity came, it hit my interest. I joined the Internet Art Community in many social media platforms such as Facebook, Instagram and lately (the former Twitter) X. <br>&nbsp;<br>Now, I'm still learning to improve my artstyle through watching different artists that teaches fellow artists how to improve their artworks</p>
+                </div>
+                    
+            </div>
+            <div class="newu pic-1 center col s12 m12 l6">
+                <img src="./images/Untitled491_20230924145912.png" alt="" class="nero center" style="height: 400px; width: 400px; padding: 0 0 30px 0;">
+                <p style="font-family: Titillium Web;">'Neru', my artist persona and original character</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="my_artworks">
+        <div class="tri row col s12 m12 l12 center">
+            <h2 class="aworks">My Artworks!</h2>
+            <p class="center"> << Swipe left and right >></p>
+        </div>
+    </div>
+
+    <div class="carousel carousel-slider">
+        <div class="carousel-fixed-item center hide-on-small-only"><a href="" class="btn amber black-text" href="https://drive.google.com/drive/folders/1qk4Abu6a-HRmLcwPg6SMkOzRTHEOUfJI">Portfolio Here!</a></div>
+            <div class="caru row col l2">
+                <a class="carousel-item" href=".#one!"><img src="./images/carousel_20231001180708.png"></a>
+                <a class="carousel-item" href=".#two!"><img src="./images/carousel_20231001180715.png"></a>
+                <a class="carousel-item" href=".#three!"><img src="./images/carousel_20231001180719.png"></a>
+                <a class="carousel-item" href=".#four!"><img src="./images/carousel_20231001180723.png"></a>
+                <a class="carousel-item" href=".#five!"><img src="./images/carousel_20231001180727.png"></a>
+                <a class="carousel-item" href=".#six!"><img src="./images/carousel_20231001180732.png"></a>
+                <a class="carousel-item" href=".#seven!"><img src="./images/Untitled489_20230923145032.png"></a>
+            </div>     
+      </div>
+
+    <div class="container hide-on-med-and-up">
+      <div class="row col s12 center">
+        <a href="https://drive.google.com/drive/folders/1qk4Abu6a-HRmLcwPg6SMkOzRTHEOUfJI" class="btn black amber-text waves-effect waves-yellow " style="font-family: Titillium Web;">Portfolio Here! </a>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="por row">
+            <div class="left col s12 m12 l12">
+                <h2 id="commission" class="comms section scrollspy">Commissions</h2>
+                    <p align="justify">ARTSTYLES I DRAW & IT'S PRICES</p>
+            </div>
+            <div class="payb row">
+              <div class="row col s12 m6 l4">
+                <div class="card amber hover-reveal">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="./images/Card-1.png">
+                  </div>
+                  <div class="card-content activator">
+                    <span class="card-title activator center"><h4>My Main <br>Artstyle</h4></span>
+                    <p class="center" style="font-size: 12pt;">Click picture for info</p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title ">a.) Main Artstyle <br>(Anime)<i class="material-icons right">close</i></span>
+                    <p align="left">- Anime like illustration, fully rendered with minimal lightning details (plus plain colored bg of your choice)</p>
+                    <pre align="justify"><div class="divider white"></div>&nbsp;&nbsp;&nbsp;&nbsp; <br>Bust/ Headshot |Php 200 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div>&nbsp;&nbsp;&nbsp;&nbsp; <br>Half Body &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Php 250 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div>&nbsp;&nbsp;&nbsp;&nbsp; <br>Full Body &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Php 300 <br>&nbsp;&nbsp;&nbsp;&nbsp;<div class="divider white"></div>
+                      <pre>Backgrounds (a.) <br>If it's customized<br>(depending on <br>complexity)<br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div><br>Php 50 - 150 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div></pre>
+                      <pre>Add ons (a.) <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div><br>Php 50 - 150 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div> <br>&nbsp;&nbsp;&nbsp; <br>(Will update for my <br>official international <br>prices!)</pre>
+                    </pre>
+                  </div>
+                </div>
+               </div>
+
+               <div class="row col s12 m6 l4">
+                  <div class="card amber hover-reveal">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img class="activator" src="./images/Card-2.png">
+                    </div>
+                    <div class="card-content activator">
+                      <span class="card-title activator center"><h4>Chibi/ <br>Emotes</h4></span>
+                    <p class="center" style="font-size: 12pt;">Click picture for info</p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title ">b.) Chibi / Emotes<i class="material-icons right">close</i></span>
+                    <p align="left">-  My chibi artstyle with free plain background of your choice</p>
+                    <pre align="justify"><div class="divider white"></div>&nbsp;&nbsp;&nbsp;&nbsp; <br>Flat Colored &nbsp;|Php 150 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div>&nbsp;&nbsp;&nbsp;&nbsp; <br>Fully Rendereds|Php 200 <br>&nbsp;&nbsp;&nbsp; <div class="divider white"></div><br>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <pre>Backgrounds (b.) <br>If it's customized<br>(depending on <br>complexity)<br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div><br>Php 50 - 150 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div></pre>
+                      <pre>Add ons (b.) <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div><br>Php 25 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div> <br>&nbsp;&nbsp;&nbsp; <br>(Will update for my <br>official international <br>prices!)</pre>
+                    </pre>
+                  </div>
+                  </div>
+                 </div>
+
+               <div class="row col s12 m6 l4">
+                    <div class="card amber hover-reveal">
+                      <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="./images/Card-3.png">
+                      </div>
+                      <div class="card-content activator">
+                        <span class="card-title activator center"><h4>Digital <br>Watercolor</h4></span>
+                    <p class="center" style="font-size: 12pt;">Click picture for info</p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title ">c.) Digital Watercolor<i class="material-icons right">close</i></span>
+                    <p align="left">- Watercolor/paint like artstyle with paper texture</p>
+                    <pre align="justify"><div class="divider white"></div>&nbsp;&nbsp;&nbsp;&nbsp; <br>Bust/ Headshot |Php 150 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div>&nbsp;&nbsp;&nbsp;&nbsp; <br>Half Body &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Php 200 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div>&nbsp;&nbsp;&nbsp;&nbsp; <br>Full Body &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Php 250 <br>&nbsp;&nbsp;&nbsp;&nbsp;<div class="divider white"></div>
+                      <pre>Backgrounds (c.) <br>If it's customized<br>(depending on <br>complexity)<br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div><br>Php 50 - 150 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div></pre>
+                      <pre>add ons (c.) <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div><br>Php 50 - 150 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div> <br>&nbsp;&nbsp;&nbsp; <br>(Will update for my <br>official international <br>prices!)</pre>
+                    </pre>
+                  </div>
+                    </div>
+                   </div>
+
+            <div class="pito row">
+                <div class="col s12 m6 l4 offset-l2 left">
+                    <div class="card amber hover-reveal">
+                      <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="./images/Card-4.png">
+                      </div>
+                      <div class="card-content activator">
+                        <span class="card-title activator center"><h4>Graphite <br>Stylization</h4></span>
+                    <p class="center" style="font-size: 12pt;">Click picture for info</p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title ">d.) Graphite Stylization<i class="material-icons right">close</i></span>
+                    <p align="left">- Digitally drawn graphite stylization style(with or without paper texture on your choice)</p>
+                    <pre align="justify"><div class="divider white"></div>&nbsp;&nbsp;&nbsp;&nbsp; <br>Bust/ Headshot |Php 125 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div>&nbsp;&nbsp;&nbsp;&nbsp; <br>Half Body &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Php 175 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div>&nbsp;&nbsp;&nbsp;&nbsp; <br>Full Body &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Php 200 <br>&nbsp;&nbsp;&nbsp;&nbsp;<div class="divider white"></div>
+                      <pre>Backgrounds (d.) <br>If it's customized<br>(depending on <br>complexity)<br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div><br>Php 50 - 100 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div></pre>
+                      <pre>Add ons (d.) <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div><br>Php 25 - 50 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div> <br>&nbsp;&nbsp;&nbsp; <br>(Will update for my <br>official international <br>prices!)</pre>
+                    </pre>
+                  </div>
+                    </div>
+                   </div>
+
+                  <div class="col s12 m6 l4 offset-m3 left">
+                    <div class="card amber hover-reveal">
+                      <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="./images/Card-5.png">
+                      </div>
+                      <div class="card-content activator">
+                        <span class="card-title activator center"><h4>Simple <br>Artstyle</h4></span>
+                    <p class="center" style="font-size: 12pt;">Click picture for info</p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title ">e.) Simple Artstyle<i class="material-icons right">close</i></span>
+                    <p align="left">- Cute and simple artstyle illustration with clean sketchy textured aesthetic style.</p>
+                    <pre align="justify"><div class="divider white"></div>&nbsp;&nbsp;&nbsp;&nbsp; <br>Flat Colored &nbsp;|Php 150 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div>&nbsp;&nbsp;&nbsp;&nbsp; <br>Fully Rendereds|Php 200 <br>&nbsp;&nbsp;&nbsp; <div class="divider white"></div><br>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <pre>Backgrounds (e.) <br>If it's customized<br>(depending on <br>complexity)<br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div><br>Php 100 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div></pre>
+                      <pre>Add ons (e.) <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div><br>Php 25 <br>&nbsp;&nbsp;&nbsp;&nbsp; <div class="divider white"></div> <br>&nbsp;&nbsp;&nbsp; <br>(Will update for my <br>official international <br>prices!)</pre>
+                    </pre>
+                  </div>
+                    </div>
+                   </div>
+            </div> 
+    </div> 
+    
+    <div class="container last">
+      <div class="walo center row col s12 m12 l12">
+          <h3 class="section scrollspy" id="process">TERMS & CONDITIONS</h3>
+      </div>
+      <div class="walo row col s12 m12 l12">
+        <p class="gwid col s12 m12 l12" align="justify">
+          • Communication is through facebook messenger or Instagram DMs
+          <br>• Payment through GCash
+          <br>• Must pay atleast half or full payment before I draw the Sketch
+          <br>• Will NOT draw any artstyles that are not listed on my artstyle list
+          <br>• Please NO TRACING, COPYING and CLAIMING of any of my artworks
+          <br>• Please DO CREDIT me when you will post or repost my artwork (so much appreciated!)
+          <br>• Major revisions are limited to minimum of 1-3 only (just before I do the lineart)
+          <br>• TAT (Turn Around Time) is 1-7 days depending on my schedule
+          <br>• If my slots are full you'll be in my waiting list (I'll contact you ASAP if I got slots)
+          <br>• You can make reservations! Just contact me
+          <br>• Strictly NO RUSHING :'D
+          <br>• NO REFUNDS
+          <br>• I have the right to accept or decline your commission if I can't do it
+          <br>• Any Bad experience will be posted (such as trolling, scamming, etc.) so please be aware
+        </p>
+      </div>
+
+      <div class="siyam center row col s12 m12 l12">
+        <h3 id="process">PROCESS OF TRANSACTION</h3>
+        <p class="center">WHAT TO DO?</p>
+      </div>
+      <div class="miyas row col s12 m12 l12">
+        <p class="gwid col s12 m12 l12" align="justify">
+        • Contact my social media accounts if you're interested on commissioning me ^^
+        <br>• Please READ carefully my TERMS & CONDITIONS before proceeding
+        <br>• Provide a CLEAR and HD reference photo
+        <br>• Prices are PER CHARACTER but background and add ons will stay on its said price range
+        <br>• I'll give you a rough sketch and I'll also ask for further revisions before I continue
+        <br>• Must pay fully when I start doing the lineart 
+        <br>• Will finish it ASAP (Atleast 2-7 days)
+        <br>• Frequent updates of the process will be given while working on your commission
+        <br>• Will give notice to changes on my schedule or any delays that will affect my speed of workflow
+        <br>• Once finished, I'll send the HD copy through GMAIL or GDRIVE
+      </p>
+      </div>
+
+      <div class="nit center row col s12 m12 l12">
+        <h3 class="dus" >CAN DRAW & CAN'T DRAW</h3>
+      </div>
+      <div class="tin row col s12 m12 l12">
+        <p class="gwid-1 col s12 m6 l5 offset-l1" align="justify">
+        ✓ Real People
+        <br>✓ FanArts
+        <br>✓ Slight Gore
+        <br>✓ Slight NSFW
+        <br>✓ OC 
+      </p>
+      <p class="gwid-1 col s12 m6 l4" align="justify">
+        ✗ Extreme NSFW
+        <br>✗ Pure Gore
+        <br>✗ Mecha
+        <br>✗ Realism
+        <br>✗ Furry
+      </p>
+      </div>
+
+      <div class="container">
+        <div class="olaw center row col s12 m12 l12">
+          <h4 class="section scrollspy" id="updates">COMMISSION UPDATES</h4>
+          <p align="center" style="font-size: 13pt;">Check my current commission <br>status by clicking the button below !</p>
+          <div class="container">
+            <div class="row col s12 center">
+              <a href="https://1drv.ms/o/s!AjYuvMMu5WhthXrqOVKpE_XEyGhT?e=hlDMYK" class="btn black amber-text waves-effect waves-yellow ">Click Here!
+                <i class="material-icons right">info</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+
+     <!-- Footer -->
+     <footer class="page-footer grey darken-4 amber-text">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h1 class="amber-text center">AniNeru</h1>
+              <p class="amber-text center" style="font-size: 13pt;">S &nbsp;e &nbsp;l&nbsp;f &nbsp;&nbsp;T&nbsp;a&nbsp;u&nbsp;g&nbsp;h&nbsp;t&nbsp;&nbsp; A&nbsp;r&nbsp;t&nbsp;i&nbsp;s&nbsp;t&nbsp;&nbsp; &&nbsp;&nbsp; A&nbsp;n&nbsp;i&nbsp;m&nbsp;a&nbsp;t&nbsp;o&nbsp;r</p>
+            </div>
+            <div class="col l4 offset-l2 s12 center">
+              <h4 class="amber-text center">Links</h4>
+              <p class="contact" style="font-size: 13pt;">Contact me in these links below</p>
+              <ul>
+                <li>
+                  <a class="btn-floating btn-large waves-effect waves-darken pulse amber" href="./https://instagram.com/_anineru?igshid=NzZhOTFlYzFmZQ=="><i class="fa fa-instagram black-text" aria-hidden="true"></i></a>
+                  <a class="btn-floating btn-large waves-effect waves-darken pulse amber" href="./https://www.facebook.com/profile.php?id=100091417051963"><i class="fa fa-facebook-f black-text"></i></a>
+                  <a class="btn-floating btn-large waves-effect waves-darken pulse amber" href="./https://www.youtube. com/channel/UC4ODIPFkHWjTRx5Mkesu46w"><i class="fa fa-youtube-play black-text" aria-hidden="true"></i></a>
+                  <a class="btn-floating btn-large waves-effect waves-darken pulse amber" href="./https://l.facebook.com/l.php?u=https%3A%2F%2Ftwitter.com%2FAniNeru%3Ffbclid%3DIwAR0_Qu2bMnCqsay_BtrKFYo6Y8NKX7w1z1wrvHW-TiDotVpoV7QNpyq9CRE&h=AT3B6rHOM2stRkNDHmqmL9rr59w5bJWIhgaTYV5EltPeLJJGzTRe6YmYS9LOmGGqL4pP6YU1Pa0aZeC8a2CS4leJ0VZ7fWeEPI99BpxhF8OMHlnsC6_qLF0BcAplfeV_4RXiqd_c7Bv3nhD_OBkn">
+                    <i class="fa fa-twitter black-text" aria-hidden="true"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright grey darken-4 amber-text">
+          <div class="container">
+            <div class=" center row col s12 m12 l12">© 2023 Copyright AniNeru</div>
+          <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+          </div>
+        </div>
+      </footer>
+
+
+    <script src="/js/code.jquery.js"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+            $('.parallax').parallax();
+            $('.carousel').carousel({
+              fullWidth: true,
+              indicators: true,
+            });
+            $('.scrollspy').scrollSpy();
+
+            autoplay();
+            function autoplay(){
+              $('.carousel').carousel('next');
+              setTimeout(autoplay, 4000);
+            }
+          });
+
+    </script>
+</body>
+</html>
